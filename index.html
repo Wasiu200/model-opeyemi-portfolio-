@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+
+    <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -38,6 +39,46 @@ header p {
   color: #f1f1f1;
 }
 
+header .trust-text {
+  margin-top: 15px;
+  font-size: 1rem;
+  font-style: italic;
+  color: #d4edda;
+  background: rgba(0,0,0,0.4);
+  padding: 8px 15px;
+  border-radius: 8px;
+  display: inline-block;
+  animation: fadeIn 3s ease;
+}
+
+.contact {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact a {
+  text-decoration: none;
+  background: #ffeb3b;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+img{
+    width: 350px;
+    height: 300px;
+}
+.contact a:hover {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
 @keyframes fadeInDown {
   from { opacity: 0; transform: translateY(-50px); }
   to { opacity: 1; transform: translateY(0); }
@@ -46,8 +87,8 @@ header p {
 .gallery {
   margin: 40px auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
   width: 90%;
   max-width: 1200px;
   animation: fadeInUp 2s ease;
@@ -55,16 +96,67 @@ header p {
 
 .gallery img {
   width: 100%;
-  width: 300px;
-  height: 300px;
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.6);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .gallery img:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0,0,0,0.8);
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.9);
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 10px;
+  transition: 0.3s;
+  user-select: none;
+}
+
+.prev { left: 30px; }
+.next { right: 30px; }
+
+.prev:hover, .next:hover {
+  color: #ffeb3b;
 }
 
 @keyframes fadeInUp {
@@ -91,22 +183,19 @@ footer {
 
   </style>
 </head>
-<body style="background-color: #454545;">
-    <div>
-    <h1 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;color: #ffeb3b;">HI I AM OPEYEMI, A FEMALE MODEL.</h1>
-</div>
+<body style="background-color: navy;">
+    <h1 style="color: #ffeb3b;">HI I AM OPEYEMI, A FEMALE MODEL.</h1>
   <header>
     <h1>Welcome to My Fashion World</h1>
     <p>Designs that speak elegance, creativity, and uniqueness</p>
-    <div style="margin-top: 26px; color: #ffeb3b; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="trust-text">Trusted, Authentic & Realiable - Customer Satisfaction is Our Priority</div>
-
-    <div>
-    <a href="https://wa.me/2348151102132" style="margin-bottom: 16px;">Chat on whatshAPP</a>
-</div>  
-</header>  
-  <section class="gallery">
-    <!-- Replace the src values with your own 12 fashion design images -->
-    <img src="WhatsApp Image 2025-09-21 at 06.24.31_257a44dd.jpg" alt="Design 2">
+    <div class="trust-text">Trusted, Authentic & Reliable – Customer Satisfaction is Our Priority</div>
+    <div class="contact">
+      <!-- Replace with your real number and email -->
+      <a href="https://wa.me/2348151102132">Chat on WhatsApp</a>
+      <!-- <a href="mailto:youremail@example.com">Send an Email</a> -->
+    </div>
+  </header>  <section class="gallery">
+   <img src="WhatsApp Image 2025-09-21 at 06.24.31_257a44dd.jpg" alt="Design 2">
     <img src="WhatsApp Image 2025-09-21 at 06.24.32_6475d0b9.jpg" alt="Design 3">
     <img src="WhatsApp Image 2025-09-21 at 06.24.33_04d2861f.jpg" alt="Design 4">
     <img src="WhatsApp Image 2025-09-21 at 06.24.34_9d3f6cba.jpg" alt="Design 5">
@@ -114,9 +203,52 @@ footer {
     <img src="WhatsApp Image 2025-09-21 at 06.24.36_44880495.jpg" alt="Design 7">
     <img src="WhatsApp Image 2025-09-21 at 06.24.36_87ffc55d.jpg" alt="Design 8">
     <img src="WhatsApp Image 2025-09-21 at 06.24.37_9bcecc05.jpg" alt="Design 9">
-    <!-- <img src="WhatsApp Image 2025-09-21 at 06.24.37_b896b9fb.jpg" alt="Design 10"> -->
     <img src="WhatsApp Image 2025-09-21 at 06.26.20_8c5be189.jpg" alt="Design 11">
     <img src="WhatsApp Image 2025-09-21 at 06.26.20_c953a469.jpg" alt="Design 12">
-  </section> 
-</body>
+  </section>  <!-- Modal -->  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <span class="prev">&#10094;</span>
+    <img class="modal-content" id="modalImg">
+    <span class="next">&#10095;</span>
+  </div>  <footer>
+  </footer>  <script>
+    const modal = document.getElementById("myModal");
+    const modalImg = document.getElementById("modalImg");
+    const closeBtn = document.querySelector(".close");
+    const prevBtn = document.querySelector(".prev");
+    const nextBtn = document.querySelector(".next");
+    const images = document.querySelectorAll(".gallery img");
+
+    let currentIndex = 0;
+
+    function openModal(index) {
+      modal.style.display = "flex";
+      modalImg.src = images[index].src;
+      currentIndex = index;
+    }
+
+    images.forEach((img, index) => {
+      img.addEventListener("click", () => openModal(index));
+    });
+
+    closeBtn.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    prevBtn.onclick = function() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      modalImg.src = images[currentIndex].src;
+    }
+
+    nextBtn.onclick = function() {
+      currentIndex = (currentIndex + 1) % images.length;
+      modalImg.src = images[currentIndex].src;
+    }
+
+    window.onclick = function(event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script></body>
 </html>
